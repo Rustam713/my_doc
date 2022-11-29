@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <label for="id_username">User name</label>
+        <input type="text" name="username" id="id_username">
+        <br>
+        <br>
+        <label for="id_password">Password</label>
+        <input type="password" name="password" id="id_password">
+
+        <button type="submit">Войти</button>
+    </form>
+
+
+</body>
+</html>

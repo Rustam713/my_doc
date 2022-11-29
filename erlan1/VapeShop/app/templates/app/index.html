@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    {% for single_pod in single_pods %}
+
+        <h1>{{ single_pod.name }}</h1>
+        <p>{{ single_pod.count_of_puffs }}</p>
+        <p>{{ single_pod.manufacturer }}</p>
+
+    {% endfor %}
+
+</body>
+</html>
